@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import NavBar from './js/commponent/NavBar/NavBar';
+import ControllRoutBar from './js/commponent/ControllRoutBar/ControllRoutBar';
+import MainContent from './js/commponent/MainContent/MainContent';
+import { Router } from 'react-router-dom';
+import history from './js/History';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <NavBar />
+      <Router history={history}>
+        <ControllRoutBar />
+        <MainContent />
+      </Router>
+    </Fragment>
   );
 }
 

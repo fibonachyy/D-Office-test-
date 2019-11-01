@@ -1,0 +1,381 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: var(--main-light);
+}
+
+
+
+:root{
+  --main-dark : #114b5f;
+  --primary-color: #1a936f;
+  --light-green: #88d498;
+  --main-shadow: #c6dabf;
+  --main-light: #f2f2f2;
+}
+
+.main_container{
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+.navbar_container{
+  width: 100%;
+  height: 46px;
+  background-color: var(--main-dark);
+}
+.controllBar_container{
+  width: 100%;
+  height: 35px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.change_router_btn{
+  flex: 50%;
+  height: 35px;
+  max-width: 200px;
+  text-align: center;
+  line-height: 35px;
+  box-shadow: 0px 0px 2px silver inset;
+  color: #ccc;
+  padding: 0;
+  user-select: none;
+  cursor: pointer;
+  
+  transition: all linear .2s ;
+  -webkit-transition: all linear .2s ;
+  -moz-transition: all linear .2s ;
+  -ms-transition: all linear .2s ;
+  -o-transition: all linear .2s ;
+}
+.change_router_btn:hover{
+  opacity: 1;
+  color: var(--main-light);
+}
+.change_router_btn a{
+  color: var(--main-dark);
+  text-decoration: none;
+  user-select: none;
+}
+a:focus{
+  outline: none;
+}
+.change_router_btn--active{
+ background-color: var(--main-light);
+ box-shadow: none;
+ color: var(--main-dark);
+  flex: 50%;
+  height: 35px;
+  max-width: 200px;
+  text-align: center;
+  line-height: 35px;
+  padding: 0;
+  user-select: none;
+  cursor: pointer;
+}
+.change_router_btn--active a{
+  color: var(--main-dark);
+  text-decoration: none;
+}
+.user_card{
+  height: auto;
+  flex: 1;
+  display: flex;
+  box-shadow: 0px 0px 1px gray;
+  opacity: 0.7;
+  margin: 5px;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  cursor: pointer;
+  transition: all linear 0.5s;
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -ms-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  
+}
+.user_card:hover{
+  opacity: 1;
+  background-color: var(--light-green);
+}
+.ticket_container{
+  width: 100%;
+  height: auto;
+  background-color: var(--main-light);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+.ticket_card{
+  height: max-content;
+  max-width: 320px;
+  flex: 30%;
+  display: flex;
+  min-width: 220px;
+  box-shadow: 0px 0px 1px gray;
+  opacity: 0.7;
+  margin: 5px;
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  cursor: pointer;
+  transition: all linear 0.5s;
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -ms-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.ticket_card:hover{
+  background-color: var(--light-green);
+}
+.main_content_container{
+  width: 100%;
+  height: auto;
+  background-color: var(--main-light);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.user_card_fileds{
+  display: inline-block;
+  flex: 20%;
+  max-width: 150px;
+  min-width: 100px;
+  white-space: nowrap;
+  flex-wrap: wrap;
+}
+.user_card_fileds > h5 , .user_card_fileds > label{
+  display: inline-block;
+  padding-left: 5px;
+  padding: 0;
+}
+.user_card_fileds > h5{
+  color: var(--main-dark);
+  padding-left: 5px;
+}
+
+.ticket_card_fileds{
+  padding: 5px;
+  min-width: 100px;
+  white-space: nowrap;
+}
+.ticket_card_fileds> span{
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--main-dark);
+}
+.ticket_card_fileds > label{
+  padding-left: 10px;
+}
+.modalebox_container{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  display: none;
+}
+.modalebox_container--active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.8);;
+}
+
+.change_ticket_container{
+  width: 80%;
+  height: auto;
+  max-width: 420px;
+  min-width: 320px;
+  min-height: auto;
+  background-color: var(--main-light);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  box-shadow: 1px 1px 8px #000;
+}
+.change_ticket_container> div {
+  height: auto;
+  flex: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  
+}
+.send_ticket_btn{
+  flex: 80%;
+  width: 80%;
+  margin: 10px auto;
+  background-color: red;
+  text-align: center;
+  opacity: 0.8;
+  background-color: var(--primary-color) ;
+  color: var(--main-light);
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  cursor: pointer;
+}
+.send_ticket_btn:active{
+  position: relative;
+  top: 1px;
+}
+.send_ticket_btn:hover{
+  opacity: 1;
+}
+.send_ticket_btn> span{
+  padding: 10px 15px;
+}
+
+
+.edit_input_group{
+  
+  width: 100%;
+  display:  grid;
+  grid-template-columns: 80px auto;
+  padding-left: 20%;
+}
+.edit_input_group> span{
+  grid-column: 1;
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  padding: 8px;
+}
+.edit_input_group > input {
+  grid-column: 2;
+  display: inline-block;
+  border: none;
+  outline: none;
+  width: 120px;
+  background-color: transparent;
+  white-space: nowrap;
+  border-bottom: solid 1px var(--main-shadow);
+}
+.edit_btn{
+  color: var(--primary-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.device_container{
+  
+  height: auto;
+  background-color: var(--main-light);
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  justify-content: left;
+  padding: 5px;
+  flex-wrap: wrap;
+  
+}
+.room_card{
+  box-shadow: 0 0 3px var(--main-dark);
+  border-radius: 4PX;
+  background-color: var(--light-green);
+  flex: 1;
+  flex-grow: 1;
+  flex-direction: row;
+  margin: 5px;
+  min-width: 310px;
+  line-height: 45px;
+  display: flex;
+  flex-wrap: wrap ;
+  flex-direction: row;
+  justify-items: flex-start;
+  max-width: 550px;
+  height: max-content;
+  -webkit-border-radius: 4PX;
+  -moz-border-radius: 4PX;
+  -ms-border-radius: 4PX;
+  -o-border-radius: 4PX;
+  cursor: pointer;
+}
+.info_row_room{
+  padding-left: 10px;
+  white-space: nowrap;
+  
+  justify-items: flex-start;
+}
+.info_row_room > label{
+  color: #111;
+  text-transform: capitalize;
+}
+.info_row_room > span{
+  color: var(--main-dark);
+  text-transform: capitalize;
+}
+.dropdown_menu_tickets{
+  padding: 8px;
+}
+.dropdown_menu_tickets > select{
+  padding: 5px;
+ width: 100%;
+  
+}
+
+.Device_card{
+  height: 42px;
+  line-height: 42px;
+  width: calc(96% - 16px);
+  margin: 5px 2% ;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  padding: 5px 8px;
+  user-select: none;
+  cursor: pointer;
+}
+.Device_card--intractable{
+  background-color: var(--light-green);
+}
+.room_info{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  justify-content: left;
+  padding: 8px;
+}
+.room_info_items{
+  padding: 5px 8px;
+  white-space: nowrap;
+  flex: 1;
+  min-width: max-content;
+  flex-grow: 1;
+  display: inline-block;
+}
+.room_info_items > label{
+  text-transform: capitalize;
+}
+.room_info_items > span{
+  color: var(--main-dark);
+}
