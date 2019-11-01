@@ -379,3 +379,9 @@ a:focus{
 .room_info_items > span{
   color: var(--main-dark);
 }
+
+.fix_width_height {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

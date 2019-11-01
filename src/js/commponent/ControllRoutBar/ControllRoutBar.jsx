@@ -23,19 +23,19 @@ class ControllRoutBar extends Component {
 
           <div className={this.checkPath('/users') ? 'change_router_btn--active' : 'change_router_btn'}>
             <Link to={'/users'}>
-              <span>Users</span>
+              <span className="fix_width_height">Users</span>
             </Link>
           </div>
 
 
           <div className={this.checkPath('/tickets') ? 'change_router_btn--active' : 'change_router_btn'}>
             <Link to={'/tickets'}>
-              <span>Tickets</span>
+              <span className="fix_width_height">Tickets</span>
             </Link>
           </div>
           <div className={this.checkPath('/devices') ? 'change_router_btn--active' : 'change_router_btn'}>
             <Link to={'/devices'}>
-              <span>Devices</span>
+              <span className="fix_width_height">Devices</span>
             </Link>
           </div>
 
